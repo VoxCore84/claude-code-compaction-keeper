@@ -1,5 +1,7 @@
 # Two-Stage Compaction Resilience for Claude Code
 
+![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue) ![License: MIT](https://img.shields.io/github/license/VoxCore84/claude-code-compaction-keeper) ![GitHub release](https://img.shields.io/github/v/release/VoxCore84/claude-code-compaction-keeper)
+
 When Claude Code compacts your conversation context, it preserves the broad strokes but loses the nuance of what you were actively doing -- which files you had open, what tools you were using, whether you were mid-build or mid-debug. Static project rules survive compaction fine. Dynamic work state does not.
 
 This pipeline solves that with a two-stage hook architecture that captures real session state *before* compaction and restores it *after*.
