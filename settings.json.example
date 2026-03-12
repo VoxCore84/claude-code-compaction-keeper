@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "PreCompact": [
+      {
+        "type": "command",
+        "command": "python /path/to/claude-code-compaction-keeper/precompact-snapshot.py"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "type": "command",
+        "command": "python /path/to/claude-code-compaction-keeper/session-stats.py"
+      }
+    ],
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "python /path/to/claude-code-compaction-keeper/compact-reinject.py",
+        "matcher": "compact"
+      }
+    ]
+  }
+}

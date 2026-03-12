@@ -1,0 +1,15 @@
+{
+  "static_reminders": [
+    "Check your project rules before making changes",
+    "Review coordination/state files before touching shared resources",
+    "Use /wrap-up at end of session"
+  ],
+  "file_categories": {
+    "code": [".py", ".ts", ".tsx", ".js", ".jsx", ".cpp", ".h", ".c", ".rs", ".go", ".java", ".cs", ".rb", ".swift", ".kt"],
+    "data": [".sql", ".json", ".yaml", ".yml", ".toml", ".csv", ".xml"],
+    "config": [".env", ".ini", ".cfg", ".conf", ".properties"],
+    "docs": [".md", ".rst", ".txt", ".adoc"]
+  },
+  "lookback_hours": 2,
+  "max_recent_files": 20
+}
