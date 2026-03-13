@@ -207,7 +207,7 @@ The PreCompact hook fires at the exact right moment -- after Claude has done rea
 
 ## Requirements
 
-- Python 3.10+ (uses PEP 604 union type syntax; stdlib only, no pip dependencies)
+- Python 3.10+ (uses PEP 604 union types; stdlib only, no pip dependencies)
 - Claude Code with hooks support
 
 > **Note:** [claude-code-workflow-guard](https://github.com/VoxCore84/claude-code-workflow-guard) also ships a `session-stats.py` implementation. If you install both, choose one `session-stats.py` to avoid duplicate JSONL logging.

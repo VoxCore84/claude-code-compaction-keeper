@@ -38,7 +38,7 @@ def load_config() -> dict:
     try:
         with open(CONFIG_FILE, "r", encoding="utf-8") as f:
             user_config = json.load(f)
-        # Merge — user values override defaults
+        # Merge -- user values override defaults
         for key in DEFAULT_CONFIG:
             if key in user_config:
                 config[key] = user_config[key]

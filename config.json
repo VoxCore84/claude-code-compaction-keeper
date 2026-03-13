@@ -2,7 +2,7 @@
   "static_reminders": [
     "Check your project rules before making changes",
     "Review coordination/state files before touching shared resources",
-    "Use /wrap-up at end of session"
+    "Commit changes and update docs at end of session"
   ],
   "file_categories": {
     "code": [".py", ".ts", ".tsx", ".js", ".jsx", ".cpp", ".h", ".c", ".rs", ".go", ".java", ".cs", ".rb", ".swift", ".kt"],
