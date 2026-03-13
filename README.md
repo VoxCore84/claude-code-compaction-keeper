@@ -178,7 +178,7 @@ A single-stage approach (just injecting static reminders at session start) canno
 The two-stage approach captures actual runtime state:
 
 | Capability | Static-only | Two-stage |
-|-----------|------------|-----------|
+|-----------|------------|----------|
 | Project rules | Yes | Yes |
 | Files being edited | No | Yes |
 | Tool usage patterns | No | Yes |
@@ -191,7 +191,7 @@ The PreCompact hook fires at the exact right moment -- after Claude has done rea
 ## Files
 
 | File | Hook Type | Purpose |
-|------|-----------|---------|
+|------|-----------|--------|
 | `precompact-snapshot.py` | PreCompact | Captures work state to JSON before compaction |
 | `compact-reinject.py` | SessionStart (matcher: "compact") | Restores static + dynamic context after compaction |
 | `session-stats.py` | PostToolUse | Logs every tool call to JSONL (data source for Stage 1) |
@@ -201,14 +201,16 @@ The PreCompact hook fires at the exact right moment -- after Claude has done rea
 ## Data Files (auto-created at runtime)
 
 | File | Location | Purpose |
-|------|----------|---------|
+|------|----------|--------|
 | `session-stats.jsonl` | `~/.claude/` | Running log of tool calls (rotated at 10 MB) |
 | `precompact-state.json` | `~/.claude/` | Snapshot written by Stage 1, read by Stage 2 |
 
 ## Requirements
 
-- Python 3.10+ (uses `match` type hints; stdlib only, no pip dependencies)
+- Python 3.10+ (uses PEP 604 union type syntax; stdlib only, no pip dependencies)
 - Claude Code with hooks support
+
+> **Note:** [claude-code-workflow-guard](https://github.com/VoxCore84/claude-code-workflow-guard) also ships a `session-stats.py` implementation. If you install both, choose one `session-stats.py` to avoid duplicate JSONL logging.
 
 ## License
 
